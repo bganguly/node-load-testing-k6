@@ -68,7 +68,7 @@ k6 run load.js
 ## 📊 Example Results
 
 
-Reference image: [redi_results.png](redi_results.png)
+Reference image: [redis_results.png](redis_results.png)
 
 ---
 
