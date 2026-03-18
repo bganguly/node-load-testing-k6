@@ -67,9 +67,8 @@ k6 run load.js
 
 ## 📊 Example Results
 
-```
-http_req_duration..............: avg=<ADD_YOUR_NUMBER>ms
-```
+
+Reference image: [redi_results.png](redi_results.png)
 
 ---
 
