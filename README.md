@@ -1,32 +1,95 @@
-# 🚀 <Project Name>
+# Load Testing a Node API with k6
 
-Short description (1–2 lines).
-Example:
-Demonstrates how backend load impacts user-perceived latency using Time-To-Visible (TTV).
+This project demonstrates how to simulate concurrent traffic against a Node.js API and measure performance under load.
 
----
-
-## ⚙️ Setup
-
-Install k6 using Homebrew:
-
-```bash
-brew install k6
-```
+It is part of a broader scalability series, used alongside a Redis caching demo to show performance improvements.
 
 ---
 
-## 🧠 What This Shows
+## 🧠 What This Project Shows
 
-- Key concept 1
-- Key concept 2
-- Key concept 3
+* How to generate load using k6
+* Measuring API latency under concurrent users
+* Baseline performance before optimization
+* Foundation for comparing caching improvements
+
+---
+
+## ⚙️ Tech Stack
+
+* Node.js (API under test)
+* k6 (load testing)
 
 ---
 
 ## 🏗️ Architecture
 
-```mermaid
-flowchart LR
-    A[Client] --> B[API]
-    B --> C[Cache]
+```
+k6 (load generator)
+        ↓
+Node API (localhost:3000)
+```
+
+---
+
+## 🚀 Load Test Configuration
+
+```js
+export const options = {
+  vus: 50,
+  duration: '10s',
+};
+```
+
+* Virtual Users: 50
+* Duration: 10 seconds
+* Endpoint: `/api/data`
+
+---
+
+## ▶️ How to Run
+
+### 1. Start the API server (from another repo)
+
+```bash
+node index.js
+```
+
+---
+
+### 2. Run load test
+
+```bash
+k6 run load.js
+```
+
+---
+
+## 📊 Example Results
+
+```
+http_req_duration..............: avg=<ADD_YOUR_NUMBER>ms
+```
+
+---
+
+## 🔍 What to Look For
+
+* Average request duration
+* Throughput under load
+* Stability of response times
+
+---
+
+## 🔗 Related Project
+
+👉 Redis caching version (shows optimization on top of this baseline)
+
+---
+
+## 🧭 Key Takeaways
+
+* Load testing helps identify bottlenecks early
+* Even simple APIs degrade under concurrency
+* Baselines are essential before optimization
+
