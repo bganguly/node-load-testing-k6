@@ -15,10 +15,17 @@ It is part of a broader scalability series, used alongside a Redis caching demo 
 
 ---
 
-## ⚙️ Tech Stack
+## ✅ Requirements
 
-* Node.js (API under test)
-* k6 (load testing)
+* Node.js 18+
+* k6 CLI
+
+Install k6:
+
+```bash
+# macOS (Homebrew)
+brew install k6
+```
 
 ---
 
